@@ -1,6 +1,6 @@
 import { GET_USER, UPLOAD_PICTURE } from "../actions/user.actions";
 
-const initialState = null;
+const initialState = {};
 
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
