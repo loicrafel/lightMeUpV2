@@ -54,7 +54,6 @@ app.get("/api", (req, res) => {
 });
 
 // jwt
-app.get("*", checkUser);
 app.get("/api/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });

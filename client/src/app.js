@@ -23,7 +23,9 @@ const App = () => {
         .catch((err) => console.log("No token"));
     };
     fetchToken();
+  }, [dispatch]);
 
+  useEffect(() => {
     if (uid) {
       dispatch(getUser(uid));
       dispatch(getPost(uid));
