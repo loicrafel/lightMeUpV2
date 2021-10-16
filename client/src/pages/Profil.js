@@ -54,7 +54,7 @@ const Profil = () => {
               </div>
             </div>
 
-            <Thread posts={privateposts} />
+            {!isEmpty(privateposts) && <Thread posts={privateposts} />}
           </div>
         ) : (
           <div className="log-container">
