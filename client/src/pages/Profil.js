@@ -6,6 +6,7 @@ import Post from "../components/post";
 import { UidContext } from "../components/AppContext";
 import Thread from "../components/thread";
 import { useSelector } from "react-redux";
+import { isEmpty } from "../components/utils";
 
 const Profil = () => {
   const uid = useContext(UidContext);
@@ -27,8 +28,9 @@ const Profil = () => {
                 <div>
                   <div className="m1">
                     <p>
-                      Bienvenue {userData.pseudo}. Tu peux soumettre une
-                      conversation ou consulter les réponses des autres joueurs.
+                      Bienvenue {!isEmpty(userData) && userData.pseudo}. Tu peux
+                      soumettre une conversation ou consulter les réponses des
+                      autres joueurs.
                     </p>
                   </div>
                   <br />
