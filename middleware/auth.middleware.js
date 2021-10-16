@@ -13,11 +13,11 @@ module.exports.requireAuth = (req, res, next) => {
       } else {
         let user = await UserModel.findById(decodedToken.id);
         res.locals.user = user;
-        console.log(decodedToken.id);
         next();
       }
     });
   } else {
     console.log("No token");
+    res.locals.user = null;
   }
 };
